@@ -39,7 +39,10 @@ import java.util.Date;
     @NamedQuery(name = "Tblapplication.findByApplicationAppliedDate", query = "SELECT t FROM Tblapplication t WHERE t.applicationAppliedDate = :applicationAppliedDate"),
     @NamedQuery(name = "Tblapplication.findByApplicationStatus", query = "SELECT t FROM Tblapplication t WHERE t.applicationStatus = :applicationStatus"),
     @NamedQuery(name = "Tblapplication.findByResumeSnapshot", query = "SELECT t FROM Tblapplication t WHERE t.resumeSnapshot = :resumeSnapshot"),
-    @NamedQuery(name = "Tblapplication.findByLastUpdatedDate", query = "SELECT t FROM Tblapplication t WHERE t.lastUpdatedDate = :lastUpdatedDate")})
+    @NamedQuery(name = "Tblapplication.findByLastUpdatedDate", query = "SELECT t FROM Tblapplication t WHERE t.lastUpdatedDate = :lastUpdatedDate"),
+
+    @NamedQuery(name="Tblapplication.findByCandidate", query="SELECT t FROM Tblapplication t WHERE t.candidateId.candidateId=:cid")
+})
 public class Tblapplication implements Serializable {
 
     private static final long serialVersionUID = 1L;

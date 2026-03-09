@@ -38,7 +38,10 @@ import java.util.Date;
     @NamedQuery(name = "Tblinterview.findByInterviewerMode", query = "SELECT t FROM Tblinterview t WHERE t.interviewerMode = :interviewerMode"),
     @NamedQuery(name = "Tblinterview.findByFeedback", query = "SELECT t FROM Tblinterview t WHERE t.feedback = :feedback"),
     @NamedQuery(name = "Tblinterview.findByResult", query = "SELECT t FROM Tblinterview t WHERE t.result = :result"),
-    @NamedQuery(name = "Tblinterview.findByInterviewStatus", query = "SELECT t FROM Tblinterview t WHERE t.interviewStatus = :interviewStatus")})
+    @NamedQuery(name = "Tblinterview.findByInterviewStatus", query = "SELECT t FROM Tblinterview t WHERE t.interviewStatus = :interviewStatus"),
+
+    @NamedQuery(name="Tblinterview.findByApplication", query="SELECT t FROM Tblinterview t WHERE t.applicationId.applicationId=:aid")
+})
 public class Tblinterview implements Serializable {
 
     private static final long serialVersionUID = 1L;

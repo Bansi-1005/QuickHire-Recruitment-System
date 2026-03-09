@@ -42,7 +42,10 @@ import java.util.Date;
     @NamedQuery(name = "Tblusers.findByUserStatus", query = "SELECT t FROM Tblusers t WHERE t.userStatus = :userStatus"),
     @NamedQuery(name = "Tblusers.findByCreatedDate", query = "SELECT t FROM Tblusers t WHERE t.createdDate = :createdDate"),
     @NamedQuery(name = "Tblusers.findByUpdatedDate", query = "SELECT t FROM Tblusers t WHERE t.updatedDate = :updatedDate"),
-    @NamedQuery(name = "Tblusers.findByLastLoginDate", query = "SELECT t FROM Tblusers t WHERE t.lastLoginDate = :lastLoginDate")})
+    @NamedQuery(name = "Tblusers.findByLastLoginDate", query = "SELECT t FROM Tblusers t WHERE t.lastLoginDate = :lastLoginDate"),
+
+    @NamedQuery(name = "Tblusers.loginByRole", query = "SELECT t FROM Tblusers t WHERE t.userEmail = :email AND t.userPassword = :password AND t.roleId.roleId = :roleId")
+})
 public class Tblusers implements Serializable {
 
     private static final long serialVersionUID = 1L;

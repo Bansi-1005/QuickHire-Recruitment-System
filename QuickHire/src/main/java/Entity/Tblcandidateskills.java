@@ -29,7 +29,10 @@ import java.io.Serializable;
 @NamedQueries({
     @NamedQuery(name = "Tblcandidateskills.findAll", query = "SELECT t FROM Tblcandidateskills t"),
     @NamedQuery(name = "Tblcandidateskills.findByCandidateSkillId", query = "SELECT t FROM Tblcandidateskills t WHERE t.candidateSkillId = :candidateSkillId"),
-    @NamedQuery(name = "Tblcandidateskills.findBySkillLevel", query = "SELECT t FROM Tblcandidateskills t WHERE t.skillLevel = :skillLevel")})
+    @NamedQuery(name = "Tblcandidateskills.findBySkillLevel", query = "SELECT t FROM Tblcandidateskills t WHERE t.skillLevel = :skillLevel"),
+    
+    @NamedQuery(name = "Tblcandidateskills.findByCandidate", query="SELECT t FROM Tblcandidateskills t WHERE t.candidateId.candidateId=:cid")
+})
 public class Tblcandidateskills implements Serializable {
 
     private static final long serialVersionUID = 1L;

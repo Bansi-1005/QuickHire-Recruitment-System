@@ -42,7 +42,12 @@ import java.util.Date;
     @NamedQuery(name = "Tblcandidates.findByCandidateGender", query = "SELECT t FROM Tblcandidates t WHERE t.candidateGender = :candidateGender"),
     @NamedQuery(name = "Tblcandidates.findByCandidateExperience", query = "SELECT t FROM Tblcandidates t WHERE t.candidateExperience = :candidateExperience"),
     @NamedQuery(name = "Tblcandidates.findByCandidateResume", query = "SELECT t FROM Tblcandidates t WHERE t.candidateResume = :candidateResume"),
-    @NamedQuery(name = "Tblcandidates.findByResumeUploadDate", query = "SELECT t FROM Tblcandidates t WHERE t.resumeUploadDate = :resumeUploadDate")})
+    @NamedQuery(name = "Tblcandidates.findByResumeUploadDate", query = "SELECT t FROM Tblcandidates t WHERE t.resumeUploadDate = :resumeUploadDate"),
+
+    @NamedQuery(name = "Tblcandidates.findByUser", query = "SELECT t FROM Tblcandidates t WHERE t.userId.userId=:uid")
+
+})
+
 public class Tblcandidates implements Serializable {
 
     private static final long serialVersionUID = 1L;
