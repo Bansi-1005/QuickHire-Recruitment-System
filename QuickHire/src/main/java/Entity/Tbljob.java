@@ -52,7 +52,9 @@ import java.util.Date;
     @NamedQuery(name = "Tbljob.findByJobExpiryDate", query = "SELECT t FROM Tbljob t WHERE t.jobExpiryDate = :jobExpiryDate"),
 
     @NamedQuery(name="Tbljob.findAllOpen", query="SELECT t FROM Tbljob t WHERE t.jobStatus='Open'"),
-    @NamedQuery(name="Tbljob.findByLocation", query="SELECT t FROM Tbljob t WHERE t.jobLocation LIKE :loc")
+    @NamedQuery(name="Tbljob.findByLocation", query="SELECT t FROM Tbljob t WHERE t.jobLocation LIKE :loc"),
+    
+    @NamedQuery(name="Tbljob.countJobs",query="SELECT COUNT(j) FROM Tbljob j")
 })
 public class Tbljob implements Serializable {
 

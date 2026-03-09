@@ -41,7 +41,9 @@ import java.util.Date;
     @NamedQuery(name = "Tblapplication.findByResumeSnapshot", query = "SELECT t FROM Tblapplication t WHERE t.resumeSnapshot = :resumeSnapshot"),
     @NamedQuery(name = "Tblapplication.findByLastUpdatedDate", query = "SELECT t FROM Tblapplication t WHERE t.lastUpdatedDate = :lastUpdatedDate"),
 
-    @NamedQuery(name="Tblapplication.findByCandidate", query="SELECT t FROM Tblapplication t WHERE t.candidateId.candidateId=:cid")
+    @NamedQuery(name="Tblapplication.findByCandidate", query="SELECT t FROM Tblapplication t WHERE t.candidateId.candidateId=:cid"),
+    
+    @NamedQuery(name="Tblapplication.countApplications",query="SELECT COUNT(a) FROM Tblapplication a")
 })
 public class Tblapplication implements Serializable {
 

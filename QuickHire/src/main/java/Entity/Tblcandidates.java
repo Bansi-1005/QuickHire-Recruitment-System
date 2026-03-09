@@ -44,7 +44,8 @@ import java.util.Date;
     @NamedQuery(name = "Tblcandidates.findByCandidateResume", query = "SELECT t FROM Tblcandidates t WHERE t.candidateResume = :candidateResume"),
     @NamedQuery(name = "Tblcandidates.findByResumeUploadDate", query = "SELECT t FROM Tblcandidates t WHERE t.resumeUploadDate = :resumeUploadDate"),
 
-    @NamedQuery(name = "Tblcandidates.findByUser", query = "SELECT t FROM Tblcandidates t WHERE t.userId.userId=:uid")
+    @NamedQuery(name = "Tblcandidates.findByUser", query = "SELECT t FROM Tblcandidates t WHERE t.userId.userId=:uid"),
+    @NamedQuery(name="Tblcandidates.countCandidates",query="SELECT COUNT(c) FROM Tblcandidates c")
 
 })
 
