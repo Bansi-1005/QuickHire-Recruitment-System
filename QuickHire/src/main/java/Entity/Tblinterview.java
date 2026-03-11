@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -145,6 +146,7 @@ public class Tblinterview implements Serializable {
         this.interviewStatus = interviewStatus;
     }
 
+    @JsonbTransient
     public Tblapplication getApplicationId() {
         return applicationId;
     }

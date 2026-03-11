@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -119,6 +120,7 @@ public class Tblscreeningscore implements Serializable {
         this.scoreDate = scoreDate;
     }
 
+    @JsonbTransient
     public Tblapplication getApplicationId() {
         return applicationId;
     }

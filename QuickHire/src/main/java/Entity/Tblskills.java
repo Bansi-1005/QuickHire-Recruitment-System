@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -83,6 +84,7 @@ public class Tblskills implements Serializable {
     }
 
     @XmlTransient
+    @JsonbTransient
     public Collection<Tbljobskills> getTbljobskillsCollection() {
         return tbljobskillsCollection;
     }
@@ -92,6 +94,7 @@ public class Tblskills implements Serializable {
     }
 
     @XmlTransient
+    @JsonbTransient
     public Collection<Tblcandidateskills> getTblcandidateskillsCollection() {
         return tblcandidateskillsCollection;
     }

@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -69,6 +70,7 @@ public class Tbljobskills implements Serializable {
         this.jobSkillWeightage = jobSkillWeightage;
     }
 
+    @JsonbTransient
     public Tbljob getJobId() {
         return jobId;
     }
@@ -77,6 +79,7 @@ public class Tbljobskills implements Serializable {
         this.jobId = jobId;
     }
 
+    @JsonbTransient
     public Tblskills getSkillId() {
         return skillId;
     }

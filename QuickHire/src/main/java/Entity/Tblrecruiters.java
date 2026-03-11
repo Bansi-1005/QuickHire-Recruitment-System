@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -123,6 +124,7 @@ public class Tblrecruiters implements Serializable {
         this.createdDate = createdDate;
     }
 
+    @JsonbTransient
     public Tblusers getUserId() {
         return userId;
     }
@@ -131,6 +133,7 @@ public class Tblrecruiters implements Serializable {
         this.userId = userId;
     }
 
+    @JsonbTransient
     public Tblcompany getCompanyId() {
         return companyId;
     }
@@ -140,6 +143,7 @@ public class Tblrecruiters implements Serializable {
     }
 
     @XmlTransient
+    @JsonbTransient
     public Collection<Tbljob> getTbljobCollection() {
         return tbljobCollection;
     }

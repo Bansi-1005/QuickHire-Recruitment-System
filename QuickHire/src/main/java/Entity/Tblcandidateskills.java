@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -74,6 +75,7 @@ public class Tblcandidateskills implements Serializable {
         this.skillLevel = skillLevel;
     }
 
+    @JsonbTransient
     public Tblcandidates getCandidateId() {
         return candidateId;
     }

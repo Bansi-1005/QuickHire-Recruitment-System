@@ -92,8 +92,6 @@ public class Tblusers implements Serializable {
     @ManyToOne
     private Tblrolemaster roleId;
     @OneToMany(mappedBy = "userId")
-    @JsonbTransient
-
     private Collection<Tblnotification> tblnotificationCollection;
 
     public Tblusers() {
@@ -174,6 +172,7 @@ public class Tblusers implements Serializable {
         this.lastLoginDate = lastLoginDate;
     }
 
+    @XmlTransient
     @JsonbTransient
     public Collection<Tblrecruiters> getTblrecruitersCollection() {
         return tblrecruitersCollection;
@@ -183,6 +182,7 @@ public class Tblusers implements Serializable {
         this.tblrecruitersCollection = tblrecruitersCollection;
     }
 
+    @XmlTransient
     @JsonbTransient
     public Collection<Tblcandidates> getTblcandidatesCollection() {
         return tblcandidatesCollection;
@@ -192,6 +192,7 @@ public class Tblusers implements Serializable {
         this.tblcandidatesCollection = tblcandidatesCollection;
     }
 
+    @JsonbTransient
     public Tblrolemaster getRoleId() {
         return roleId;
     }
@@ -200,6 +201,7 @@ public class Tblusers implements Serializable {
         this.roleId = roleId;
     }
 
+    @XmlTransient
     @JsonbTransient
     public Collection<Tblnotification> getTblnotificationCollection() {
         return tblnotificationCollection;

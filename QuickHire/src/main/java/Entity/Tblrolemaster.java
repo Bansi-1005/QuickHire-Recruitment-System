@@ -53,9 +53,8 @@ public class Tblrolemaster implements Serializable {
     @Column(name = "createdDate")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
-    
+ 
     @OneToMany(mappedBy = "roleId")
-    @JsonbTransient
     private Collection<Tblusers> tblusersCollection;
 
     public Tblrolemaster() {

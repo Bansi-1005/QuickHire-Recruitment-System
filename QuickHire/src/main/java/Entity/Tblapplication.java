@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -134,8 +135,9 @@ public class Tblapplication implements Serializable {
     public void setLastUpdatedDate(Date lastUpdatedDate) {
         this.lastUpdatedDate = lastUpdatedDate;
     }
-
+    
     @XmlTransient
+    @JsonbTransient
     public Collection<Tblinterview> getTblinterviewCollection() {
         return tblinterviewCollection;
     }
@@ -145,6 +147,7 @@ public class Tblapplication implements Serializable {
     }
 
     @XmlTransient
+    @JsonbTransient
     public Collection<Tblscreeningscore> getTblscreeningscoreCollection() {
         return tblscreeningscoreCollection;
     }
@@ -152,7 +155,8 @@ public class Tblapplication implements Serializable {
     public void setTblscreeningscoreCollection(Collection<Tblscreeningscore> tblscreeningscoreCollection) {
         this.tblscreeningscoreCollection = tblscreeningscoreCollection;
     }
-
+    
+    @JsonbTransient
     public Tblcandidates getCandidateId() {
         return candidateId;
     }
@@ -161,6 +165,7 @@ public class Tblapplication implements Serializable {
         this.candidateId = candidateId;
     }
 
+    @JsonbTransient
     public Tbljob getJobId() {
         return jobId;
     }
@@ -170,6 +175,7 @@ public class Tblapplication implements Serializable {
     }
 
     @XmlTransient
+    @JsonbTransient
     public Collection<Tblapplicationstatushistory> getTblapplicationstatushistoryCollection() {
         return tblapplicationstatushistoryCollection;
     }
