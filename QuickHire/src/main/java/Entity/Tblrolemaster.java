@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -52,7 +53,9 @@ public class Tblrolemaster implements Serializable {
     @Column(name = "createdDate")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
+    
     @OneToMany(mappedBy = "roleId")
+    @JsonbTransient
     private Collection<Tblusers> tblusersCollection;
 
     public Tblrolemaster() {
@@ -91,7 +94,6 @@ public class Tblrolemaster implements Serializable {
         this.createdDate = createdDate;
     }
 
-    @XmlTransient
     public Collection<Tblusers> getTblusersCollection() {
         return tblusersCollection;
     }

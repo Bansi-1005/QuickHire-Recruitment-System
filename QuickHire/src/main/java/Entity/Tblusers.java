@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -91,6 +92,8 @@ public class Tblusers implements Serializable {
     @ManyToOne
     private Tblrolemaster roleId;
     @OneToMany(mappedBy = "userId")
+    @JsonbTransient
+
     private Collection<Tblnotification> tblnotificationCollection;
 
     public Tblusers() {
@@ -171,7 +174,7 @@ public class Tblusers implements Serializable {
         this.lastLoginDate = lastLoginDate;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public Collection<Tblrecruiters> getTblrecruitersCollection() {
         return tblrecruitersCollection;
     }
@@ -180,7 +183,7 @@ public class Tblusers implements Serializable {
         this.tblrecruitersCollection = tblrecruitersCollection;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public Collection<Tblcandidates> getTblcandidatesCollection() {
         return tblcandidatesCollection;
     }
@@ -197,7 +200,7 @@ public class Tblusers implements Serializable {
         this.roleId = roleId;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public Collection<Tblnotification> getTblnotificationCollection() {
         return tblnotificationCollection;
     }
