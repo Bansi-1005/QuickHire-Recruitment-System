@@ -21,17 +21,17 @@ import java.util.Collection;
 public class CandidateResource {
     @EJB CandidateEJBLocal ejb;
     
-//    public Tblusers candidateLogin(String email, String password, int roleId) {
-//        try {
-//            return em.createNamedQuery("Tblusers.loginByRole", Tblusers.class)
-//                    .setParameter("email", email)
-//                    .setParameter("password", password)
-//                    .setParameter("roleId", roleId)
-//                    .getSingleResult();
-//        } catch (Exception e) {
-//            return null;
-//        }   
-//    }
+    // Login
+    @GET
+    @Path("candidateLogin")
+    @Produces("application/json")
+    public Tblusers candidateLogin(@QueryParam("email") String email, @QueryParam("password") String password, @QueryParam("roleId") int roleId) {
+        try {
+            return ejb.candidateLogin(email, password, roleId);
+        } catch (Exception e) {
+            return null;
+        }   
+    }
 
 //    public void registerCandidate(Tblusers user, Tblcandidates candidate) {
 //        try {

@@ -45,7 +45,7 @@ import java.util.Date;
     @NamedQuery(name = "Tblusers.findByUpdatedDate", query = "SELECT t FROM Tblusers t WHERE t.updatedDate = :updatedDate"),
     @NamedQuery(name = "Tblusers.findByLastLoginDate", query = "SELECT t FROM Tblusers t WHERE t.lastLoginDate = :lastLoginDate"),
 
-    //@NamedQuery(name = "Tblusers.loginByRole", query = "SELECT t FROM Tblusers t WHERE t.userEmail = :email AND t.userPassword = :password AND t.roleId.roleId = :roleId")
+    @NamedQuery(name = "Tblusers.loginByRole", query = "SELECT t FROM Tblusers t WHERE t.userEmail = :email AND t.userPassword = :password AND t.roleId.roleId = :roleId"),
     // TOTAL USERS
     @NamedQuery(name = "Tblusers.countUsers",query = "SELECT COUNT(u) FROM Tblusers u")
 })
